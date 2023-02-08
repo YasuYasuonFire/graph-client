@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import gql from 'graphql-tag'
 // ...
 // we import types and typed-graphql document from the generated code (`..graphclient/`)
-import { execute } from './.graphclient/'
+import { execute } from './graphclient/'
 
 function App() {
   const [data, setData] = React.useState('')
