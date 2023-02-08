@@ -2,28 +2,10 @@ import React, { useEffect } from 'react'
 import gql from 'graphql-tag'
 // ...
 // we import types and typed-graphql document from the generated code (`..graphclient/`)
-import { execute } from '../.graphclient'
+import { execute } from '.graphclient'
 
 function App() {
   const [data, setData] = React.useState('')
-
-  // const myQuery = gql`
-  //   query pairs {
-  //     pair(id: "0x00004ee988665cdda9a1080d5792cecd16dc1220") {
-  //       id
-  //       token0 {
-  //         id
-  //         symbol
-  //         name
-  //       }
-  //       token1 {
-  //         id
-  //         symbol
-  //         name
-  //       }
-  //     }
-  //   }
-  // `
 
   //generate random number function
   const getRandomInt = (max: number) => {
