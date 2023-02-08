@@ -44,18 +44,19 @@ function App() {
       <header className="App-header">
         <p>Your Lucky Token</p>
         <button onClick={executeQuery}>Go!</button>
-        <fieldset>
-          {data && (
-            <>
+
+        {data && (
+          <>
+            <fieldset>
               <p>contract address: {data['tokens'][0].id}</p>
               <p>symbol: {data['tokens'][0].symbol}</p>
               <p>name: {data['tokens'][0].name}</p>
               <a href={'https://app.uniswap.org/#/tokens/ethereum/' + data['tokens'][0].id} target="_blank">
                 Check on Uniswap!
               </a>
-            </>
-          )}
-        </fieldset>
+            </fieldset>
+          </>
+        )}
       </header>
     </div>
   )
