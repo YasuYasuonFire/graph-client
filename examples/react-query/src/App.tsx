@@ -6,19 +6,36 @@ import { execute } from './graphclient/'
 
 function App() {
   const [data, setData] = React.useState('')
+  //const [dataUniswap, setDataUniswap] = React.useState(new Map())
+  const [totalLiquidity0, setTotalLiquidity0] = React.useState(0)
+  const [totalLiquidity1, setTotalLiquidity1] = React.useState(0)
+  const [totalLiquidity2, setTotalLiquidity2] = React.useState(0)
+  const [totalLiquidity3, setTotalLiquidity3] = React.useState(0)
+  const [totalLiquidity4, setTotalLiquidity4] = React.useState(0)
+  const [totalLiquidity5, setTotalLiquidity5] = React.useState(0)
+  const [totalLiquidity6, setTotalLiquidity6] = React.useState(0)
+  const [totalLiquidity7, setTotalLiquidity7] = React.useState(0)
+  const [totalLiquidity8, setTotalLiquidity8] = React.useState(0)
+  const [totalLiquidity9, setTotalLiquidity9] = React.useState(0)
+  //let liquidity: any
 
-  //generate random number function
-  const getRandomInt = (max: number) => {
-    console.log('getRandomInt')
-    return Math.floor(Math.random() * max)
+  const myQuery = `
+    query{
+    markets(first: 100, orderBy: supplyRate, orderDirection: desc) {
+      supplyRate
+      symbol
+      id
+      underlyingAddress
+    }
   }
-
-  const myQuery = gql`
-    query tokens($skipNum: Int!) {
-      tokens(first: 1, skip: $skipNum) {
+  `
+  const myQueryUni = gql`
+    query token($myid: String!) {
+      token(id: $myid) {
         id
         symbol
         name
+        totalLiquidity
       }
     }
   `
@@ -26,35 +43,206 @@ function App() {
   useEffect(() => {}, [])
 
   const executeQuery = () => {
-    //set variable for skip
-    let variables = {
-      skipNum: getRandomInt(1000),
-    }
-    execute(myQuery, variables).then((result) => {
+    execute(myQuery, {}).then((result) => {
+      console.log(result?.data)
       setData(result?.data)
     })
-    console.log('setData')
-    // console.log(data)
-    // console.log(Object.keys(data))
-    // console.log(data["tokens"][0].id)
+  }
+
+  const getTotalLiquidity0 = (underlyingAddress) => {
+    let variables = {
+      myid: underlyingAddress,
+    }
+    execute(myQueryUni, variables).then((result) => {
+      //return result?.data['token'].totalLiquidity;
+      // console.log(result)
+      //setTotalLiquidity(result?.data['token'].totalLiquidity);
+      setTotalLiquidity0(result?.data['token'].totalLiquidity)
+    })
+  }
+
+  const getTotalLiquidity1 = (underlyingAddress) => {
+    let variables = {
+      myid: underlyingAddress,
+    }
+    execute(myQueryUni, variables).then((result) => {
+      //return result?.data['token'].totalLiquidity;
+      console.log(result)
+      //setTotalLiquidity(result?.data['token'].totalLiquidity);
+      setTotalLiquidity1(result?.data['token'].totalLiquidity)
+    })
+  }
+  const getTotalLiquidity2 = (underlyingAddress) => {
+    let variables = {
+      myid: underlyingAddress,
+    }
+    execute(myQueryUni, variables).then((result) => {
+      //return result?.data['token'].totalLiquidity;
+      console.log(result)
+      //setTotalLiquidity(result?.data['token'].totalLiquidity);
+      setTotalLiquidity2(result?.data['token'].totalLiquidity)
+    })
+  }
+  const getTotalLiquidity3 = (underlyingAddress) => {
+    let variables = {
+      myid: underlyingAddress,
+    }
+    execute(myQueryUni, variables).then((result) => {
+      //return result?.data['token'].totalLiquidity;
+      console.log(result)
+      //setTotalLiquidity(result?.data['token'].totalLiquidity);
+      setTotalLiquidity3(result?.data['token'].totalLiquidity)
+    })
+  }
+
+  const getTotalLiquidity4 = (underlyingAddress) => {
+    let variables = {
+      myid: underlyingAddress,
+    }
+    execute(myQueryUni, variables).then((result) => {
+      //return result?.data['token'].totalLiquidity;
+      console.log(result)
+      //setTotalLiquidity(result?.data['token'].totalLiquidity);
+      setTotalLiquidity4(result?.data['token'].totalLiquidity)
+    })
+  }
+  const getTotalLiquidity5 = (underlyingAddress) => {
+    let variables = {
+      myid: underlyingAddress,
+    }
+    execute(myQueryUni, variables).then((result) => {
+      //return result?.data['token'].totalLiquidity;
+      console.log(result)
+      //setTotalLiquidity(result?.data['token'].totalLiquidity);
+      setTotalLiquidity5(result?.data['token'].totalLiquidity)
+    })
+  }
+  const getTotalLiquidity6 = (underlyingAddress) => {
+    let variables = {
+      myid: underlyingAddress,
+    }
+    execute(myQueryUni, variables).then((result) => {
+      //return result?.data['token'].totalLiquidity;
+      console.log(result)
+      //setTotalLiquidity(result?.data['token'].totalLiquidity);
+      setTotalLiquidity6(result?.data['token'].totalLiquidity)
+    })
+  }
+  const getTotalLiquidity7 = (underlyingAddress) => {
+    let variables = {
+      myid: underlyingAddress,
+    }
+    execute(myQueryUni, variables).then((result) => {
+      //return result?.data['token'].totalLiquidity;
+      console.log(result)
+      //setTotalLiquidity(result?.data['token'].totalLiquidity);
+      setTotalLiquidity7(result?.data['token'].totalLiquidity)
+    })
+  }
+  const getTotalLiquidity8 = (underlyingAddress) => {
+    let variables = {
+      myid: underlyingAddress,
+    }
+    execute(myQueryUni, variables).then((result) => {
+      //return result?.data['token'].totalLiquidity;
+      console.log(result)
+      //setTotalLiquidity(result?.data['token'].totalLiquidity);
+      setTotalLiquidity8(result?.data['token'].totalLiquidity)
+    })
+  }
+  const getTotalLiquidity9 = (underlyingAddress) => {
+    let variables = {
+      myid: underlyingAddress,
+    }
+    execute(myQueryUni, variables).then((result) => {
+      //return result?.data['token'].totalLiquidity;
+      console.log(result)
+      //setTotalLiquidity(result?.data['token'].totalLiquidity);
+      setTotalLiquidity9(result?.data['token'].totalLiquidity)
+    })
+  }
+
+  const executeUnidata = () => {
+    getTotalLiquidity0(data['markets'][0].underlyingAddress)
+    getTotalLiquidity1(data['markets'][1].underlyingAddress)
+    getTotalLiquidity2(data['markets'][2].underlyingAddress)
+    getTotalLiquidity3(data['markets'][3].underlyingAddress)
+    getTotalLiquidity4(data['markets'][4].underlyingAddress)
+    getTotalLiquidity5(data['markets'][5].underlyingAddress)
+    getTotalLiquidity6(data['markets'][6].underlyingAddress)
+    getTotalLiquidity7(data['markets'][7].underlyingAddress)
+    getTotalLiquidity8(data['markets'][8].underlyingAddress)
+    getTotalLiquidity9(data['markets'][9].underlyingAddress)
   }
 
   return (
     <div className="App">
       <header className="App-header">
-        <p>Your Lucky Token</p>
-        <button onClick={executeQuery}>Go!</button>
+        <p>Find Best Token</p>
+        <button onClick={executeQuery}>Get Compound Data</button>
+        <button onClick={executeUnidata}>Get Uniswap Data</button>
 
         {data && (
           <>
-            <fieldset>
-              <p>contract address: {data['tokens'][0].id}</p>
-              <p>symbol: {data['tokens'][0].symbol}</p>
-              <p>name: {data['tokens'][0].name}</p>
-              <a href={'https://app.uniswap.org/#/tokens/ethereum/' + data['tokens'][0].id} target="_blank">
-                Check on Uniswap!
-              </a>
-            </fieldset>
+            <table id="mytable">
+              <tr>
+                <th>Symbol</th>
+                <th>supplyRate</th>
+                <th>totalLiquidity</th>
+              </tr>
+              <tr>
+                <td> {data['markets'][0].symbol.slice(1)}</td>
+                <td> {(data['markets'][0].supplyRate * 100).toFixed(2)} </td>
+                <td>{totalLiquidity0}</td>
+              </tr>
+              <tr>
+                <td> {data['markets'][1].symbol.slice(1)}</td>
+                <td> {(data['markets'][1].supplyRate * 100).toFixed(2)} </td>
+                <td>{totalLiquidity1}</td>
+              </tr>
+              <tr>
+                <td> {data['markets'][2].symbol.slice(1)}</td>
+                <td> {(data['markets'][2].supplyRate * 100).toFixed(2)} </td>
+                <td>{totalLiquidity2}</td>
+              </tr>
+              <tr>
+                <td> {data['markets'][3].symbol.slice(1)}</td>
+                <td> {(data['markets'][3].supplyRate * 100).toFixed(2)} </td>
+                <td>{totalLiquidity3}</td>
+              </tr>
+              <tr>
+                <td> {data['markets'][4].symbol.slice(1)}</td>
+                <td> {(data['markets'][4].supplyRate * 100).toFixed(2)} </td>
+                <td>{totalLiquidity4}</td>
+              </tr>
+              <tr>
+                <td> {data['markets'][5].symbol.slice(1)}</td>
+                <td> {(data['markets'][5].supplyRate * 100).toFixed(2)} </td>
+                <td>{totalLiquidity5}</td>
+              </tr>
+              <tr>
+                <td> {data['markets'][6].symbol.slice(1)}</td>
+                <td> {(data['markets'][6].supplyRate * 100).toFixed(2)} </td>
+                <td>{totalLiquidity6}</td>
+              </tr>
+              <tr>
+                <td> {data['markets'][7].symbol.slice(1)}</td>
+                <td> {(data['markets'][7].supplyRate * 100).toFixed(2)} </td>
+                <td>{totalLiquidity7}</td>
+              </tr>
+              <tr>
+                <td> {data['markets'][8].symbol.slice(1)}</td>
+                <td> {(data['markets'][8].supplyRate * 100).toFixed(2)} </td>
+                <td>{totalLiquidity8}</td>
+              </tr>
+              <tr>
+                <td> {data['markets'][9].symbol.slice(1)}</td>
+                <td> {(data['markets'][9].supplyRate * 100).toFixed(2)} </td>
+                <td>{totalLiquidity9}</td>
+              </tr>
+
+              <tr></tr>
+            </table>
           </>
         )}
       </header>
