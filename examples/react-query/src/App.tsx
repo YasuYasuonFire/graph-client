@@ -187,8 +187,8 @@ function App() {
             <table id="mytable">
               <tr>
                 <th>Symbol</th>
-                <th>supplyRate</th>
-                <th>totalLiquidity</th>
+                <th>supplyRate[%]</th>
+                <th>totalLiquidity[amount]</th>
               </tr>
               <tr>
                 <td> {data['markets'][0].symbol.slice(1)}</td>

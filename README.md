@@ -1,20 +1,22 @@
-# Your Lucky Token
+# Find Best Token
 
 ## Product URL
 
-https://graph-client-react-query-ln10qfm8q-yasuyasuonfire.vercel.app/
+https://graph-client-react-query.vercel.app/
 
 ## What it does
 
-From tokens listed on Uniswap, you can find unknown token for you.
+You can find token which has high APY and enough liquidity.
 <br>
 <br>
 
 ## The problem it solves
 
 There are a lot a lot tokens on public blockchain.
-We can't get information about no-major token.
-By this app, by using randommess, you can find unkown token for you.
+Even if APY is high on Compound, there is risk about liquidity.
+(Not enough liquidity leads risk of the token price falling down.)
+By this app, by using information from Compound and Uniswap,
+you can find best token for you.
 <br>
 <br>
 
@@ -51,4 +53,4 @@ The basic usage of The Graph.
 ## What's next for
 
 By more complicated queries, I will build
-usefull information app by Uniswap data.
+usefull information app.
