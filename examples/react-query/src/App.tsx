@@ -179,12 +179,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>Find Best Token</p>
-        <button onClick={executeQuery}>Get Compound Data</button>
-        <button onClick={executeUnidata}>Get Uniswap Data</button>
-
+        <div>
+          <button onClick={executeQuery}>Get Compound Data</button>
+          <button onClick={executeUnidata}>Get Uniswap Data</button>
+        </div>
+        <br></br>
         {data && (
           <>
-            <table id="mytable">
+            <table id="mytable" class="mytable">
               <tr>
                 <th>Symbol</th>
                 <th>supplyRate[%]</th>
@@ -193,52 +195,52 @@ function App() {
               <tr>
                 <td> {data['markets'][0].symbol.slice(1)}</td>
                 <td> {(data['markets'][0].supplyRate * 100).toFixed(2)} </td>
-                <td>{totalLiquidity0}</td>
+                <td>{parseFloat(totalLiquidity0).toFixed(2)}</td>
               </tr>
               <tr>
                 <td> {data['markets'][1].symbol.slice(1)}</td>
                 <td> {(data['markets'][1].supplyRate * 100).toFixed(2)} </td>
-                <td>{totalLiquidity1}</td>
+                <td>{parseFloat(totalLiquidity1).toFixed(2)}</td>
               </tr>
               <tr>
                 <td> {data['markets'][2].symbol.slice(1)}</td>
                 <td> {(data['markets'][2].supplyRate * 100).toFixed(2)} </td>
-                <td>{totalLiquidity2}</td>
+                <td>{parseFloat(totalLiquidity2).toFixed(2)}</td>
               </tr>
               <tr>
                 <td> {data['markets'][3].symbol.slice(1)}</td>
                 <td> {(data['markets'][3].supplyRate * 100).toFixed(2)} </td>
-                <td>{totalLiquidity3}</td>
+                <td>{parseFloat(totalLiquidity3).toFixed(2)}</td>
               </tr>
               <tr>
                 <td> {data['markets'][4].symbol.slice(1)}</td>
                 <td> {(data['markets'][4].supplyRate * 100).toFixed(2)} </td>
-                <td>{totalLiquidity4}</td>
+                <td>{parseFloat(totalLiquidity4).toFixed(2)}</td>
               </tr>
               <tr>
                 <td> {data['markets'][5].symbol.slice(1)}</td>
                 <td> {(data['markets'][5].supplyRate * 100).toFixed(2)} </td>
-                <td>{totalLiquidity5}</td>
+                <td>{parseFloat(totalLiquidity5).toFixed(2)}</td>
               </tr>
               <tr>
                 <td> {data['markets'][6].symbol.slice(1)}</td>
                 <td> {(data['markets'][6].supplyRate * 100).toFixed(2)} </td>
-                <td>{totalLiquidity6}</td>
+                <td>{parseFloat(totalLiquidity6).toFixed(2)}</td>
               </tr>
               <tr>
                 <td> {data['markets'][7].symbol.slice(1)}</td>
                 <td> {(data['markets'][7].supplyRate * 100).toFixed(2)} </td>
-                <td>{totalLiquidity7}</td>
+                <td>{parseFloat(totalLiquidity7).toFixed(2)}</td>
               </tr>
               <tr>
                 <td> {data['markets'][8].symbol.slice(1)}</td>
                 <td> {(data['markets'][8].supplyRate * 100).toFixed(2)} </td>
-                <td>{totalLiquidity8}</td>
+                <td>{parseFloat(totalLiquidity8).toFixed(2)}</td>
               </tr>
               <tr>
                 <td> {data['markets'][9].symbol.slice(1)}</td>
                 <td> {(data['markets'][9].supplyRate * 100).toFixed(2)} </td>
-                <td>{totalLiquidity9}</td>
+                <td>{parseFloat(totalLiquidity9).toFixed(2)}</td>
               </tr>
 
               <tr></tr>
