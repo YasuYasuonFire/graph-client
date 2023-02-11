@@ -31,8 +31,8 @@ I tried to make very basic project.
 
 ### The Graph
 
-### React
-
+・Graph client<br>
+・Subgraph Studio (testing endpoint to compound v2 and uniswap v2)
 <br>
 <br>
 
